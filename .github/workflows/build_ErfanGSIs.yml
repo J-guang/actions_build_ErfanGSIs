@@ -14,7 +14,7 @@ on:
     types: [started]
     
 env:
-  ROM_URL: https://ip2021923941.mobgslb.tbcache.com/Firmware/Flyme/meizu17/8.2.0.0/cn/20201127024107/db814fdf/update.zip?ali_redirect_domain=download.meizu.com&ali_redirect_ex_ftag=21bbe29b06868b919a6844729ae8cdb1969d5046307a0e2e&ali_redirect_ex_tmining_ts=1606968955&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=100
+  ROM_URL: https://ip4173122781.mobgslb.tbcache.com/Firmware/Flyme/meizu17/8.2.0.0/cn/20201202030031/512a5b9c/update.zip?ali_redirect_domain=download.meizu.com&ali_redirect_ex_ftag=bedcac108592ed11166dbd79481d6800f77e39928e2d5d4d&ali_redirect_ex_tmining_ts=1607159571&ali_redirect_ex_tmining_expire=3600&ali_redirect_ex_hot=100
   ROM_NAME: Flyme
   TZ: Asia/Shanghai
 
@@ -51,7 +51,7 @@ jobs:
               sudo bash setup.sh
        
        - name: Download Stock Rom & Generate GSI
-         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME
+         run: sudo ./ErfanGSIs/url2GSI.sh $ROM_URL $ROM_NAME -ab
        
        - name: Zip GSI  
          run: |
@@ -61,7 +61,7 @@ jobs:
        - name: Upload GSI to BitSend
          run: |
               curl -sL https://git.io/file-transfer | sh
-              ./transfer bit final/GSI.zip
+              ./transfer wet final/GSI.zip
 
          
             
